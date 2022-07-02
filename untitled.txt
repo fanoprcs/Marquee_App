@@ -1,0 +1,2 @@
+cd C:\Users\user\Python\word_LED
+python app.py

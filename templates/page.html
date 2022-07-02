@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--html:5 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑馬燈</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style> form{ display : inline;} </style> <!-- 不知道為甚麼放在css不行,可能是flask的原因 -->
+</head>
+    
+<body class="Main_theme">
+    <h1>跑馬燈</h1>
+    <br><br>
+    
+    <div style="text-align:center;border-style:none; margin:0px auto;">
+      <h2>請輸入文字: </h2>
+        <form action="{{ url_for('get_Word')}}" method="POST" enctype = "multipart/form-data">
+            <input type = 'text' id = "msg" name= "Word">
+            <button type="submit" id = "get" class = "button1">送出</button>
+        </form><br><br>
+        
+      <h2>請選擇字體: </h2>
+        <form action="{{ url_for('set_mingliu')}}" >
+            <button type="submit" class = "button1">新明</button>
+        </form>
+        <form action="{{ url_for('set_kaiu')}}" >
+            <button type="submit" class = "button1">標楷</button>
+        </form>
+        <form action="{{ url_for('set_msjh')}}" >
+            <button type="submit" class = "button1">微軟</button>
+        </form>
+      <h2>請選擇字體顏色: </h2>
+      <h2>請選擇背景顏色: </h2>
+      <h2>開始運行?</h2>
+      <form action="{{ url_for('start') }}">
+          <button type="submit" class = "button1">執行</button>
+      </form><br>
+    </div>
+    <br><br>
+    <div style = "text-align:center;">
+        {{ show_word_area }}<br>
+        {{ show_type_area }}<br>
+        
+        
+        {{ show_status_area }}<br>
+    <br>
+    </div>
+ 
+    
+    
+    
+</body>
+</html>
