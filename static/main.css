@@ -18,10 +18,14 @@ h1 {
   border: 2px black solid;
   border-radius: 5px;
   position: relative;
-  
   color: #EF7F00;
   font-weight: 600;
   font-size: 14px;
+}
+
+.button1:focus{
+    color: black;
+    opacity: 0.5; /* 設置不透明度（可以不設置） */
 }
 .button2 {
   width: 90px;
